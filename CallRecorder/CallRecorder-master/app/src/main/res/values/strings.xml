@@ -62,8 +62,8 @@ href="https://play.google.com/store/apps/developer?id=JL+Creative+Software">Goog
 
     <string name="permission_whitelist_title">Missing Permission</string>
     <string name="permission_whitelist">The Exlcude List requires permission to read your contacts. Please grant "Read Contacts" permission to this app.</string>
-    <string name="toggle_off">Off</string>
-    <string name="toggle_on">On</string>
+    <string name="toggle_off"> </string>
+    <string name="toggle_on"> </string>
     <string name="title_activity_settings">Settings</string>
 
     <string name="str_access_permissions">Call Recorder needs access to your contacts to identify your call recordings and prevent selected contacts from being recorded.</string>
