@@ -38,6 +38,8 @@ import com.jlcsoftware.helpers.RateMeNowDialog;
 import java.io.File;
 import java.util.ArrayList;
 
+import static android.Manifest.permission.CALL_PHONE;
+
 
 /**
  * Our MAIN Activity - MAIN LAUNCHER
@@ -487,7 +489,15 @@ public class MainActivity extends AppCompatActivity implements RecordingFragment
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             ActivityCompat.requestPermissions(MainActivity.this,
-                                    new String[]{Manifest.permission.READ_CONTACTS},
+                                    new String[]{Manifest.permission.READ_CONTACTS,
+                                            Manifest.permission.READ_PHONE_STATE,
+                                            Manifest.permission.CALL_PHONE,
+                                            Manifest.permission.ACCESS_NETWORK_STATE,
+                                            Manifest.permission.PROCESS_OUTGOING_CALLS,
+                                            Manifest.permission.READ_CONTACTS,
+                                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                            Manifest.permission.RECORD_AUDIO},
                                     0x01);
                         }
                     }).show();
@@ -497,7 +507,15 @@ public class MainActivity extends AppCompatActivity implements RecordingFragment
                     // No explanation needed, we can request the permission.
 
                     ActivityCompat.requestPermissions(this,
-                            new String[]{Manifest.permission.READ_CONTACTS},
+                            new String[]{Manifest.permission.READ_CONTACTS,
+                                    Manifest.permission.READ_PHONE_STATE,
+                                    Manifest.permission.CALL_PHONE,
+                                    Manifest.permission.ACCESS_NETWORK_STATE,
+                                    Manifest.permission.PROCESS_OUTGOING_CALLS,
+                                    Manifest.permission.READ_CONTACTS,
+                                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                    Manifest.permission.RECORD_AUDIO},
                             0x01);
 
                 }
