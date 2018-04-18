@@ -5,7 +5,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:button="@drawable/toggle_switch"
-
     android:background="@null"
     android:textOff="@string/toggle_off"
     android:textOn="@string/toggle_on"

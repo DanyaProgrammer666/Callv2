@@ -72,8 +72,8 @@ public class MyRecordingRecyclerViewAdapter extends RecyclerView.Adapter<MyRecor
         mListener = listener;
         handler = new Handler(this);
         selectedItems = new SparseBooleanArray();
-        inImage = context.getResources().getDrawable(R.drawable.phone_in);
-        outImage = context.getResources().getDrawable(R.drawable.phone_out);
+        inImage = context.getResources().getDrawable(R.drawable.phone_in_icon);
+        outImage = context.getResources().getDrawable(R.drawable.phone_out_icon);
         loadAdapter(context, true);
     }
 

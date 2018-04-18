@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.jlcsoftware.callrecorder.MainActivity">
 
+
+
     <item
-        android:id="@+id/onswitch"
-        android:orderInCategory="100"
-        android:title=""
-        android:visible="true"
-        app:actionLayout="@layout/actionbar_toggle2"
+        android:id="@+id/ontoggle"
+        android:title="test"
+        app:actionLayout="@layout/menu_switch"
         app:showAsAction="always" />
+
 
     <item
         android:id="@+id/action_share"

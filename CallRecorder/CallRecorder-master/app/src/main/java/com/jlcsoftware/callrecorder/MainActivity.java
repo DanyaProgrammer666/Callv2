@@ -28,7 +28,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.MediaController;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.jlcsoftware.database.CallLog;
 import com.jlcsoftware.database.Database;
@@ -126,14 +128,24 @@ public class MainActivity extends AppCompatActivity implements RecordingFragment
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        SwitchCompat switchCompat = (SwitchCompat) menu.findItem(R.id.onswitch).getActionView().findViewById(R.id.switch1);
-        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+
+        ToggleButton mSwitchShowSecure;
+        mSwitchShowSecure = (ToggleButton) menu.findItem(R.id.ontoggle).getActionView().findViewById(R.id.menu_toggle_button);
+
+        mSwitchShowSecure.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                AppPreferences.getInstance(MainActivity.this).setRecordingEnabled(isChecked);
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                // сохраняем новое значение в настройки
+                AppPreferences.getInstance(MainActivity.this).setRecordingEnabled(b);
             }
         });
-        switchCompat.setChecked(AppPreferences.getInstance(MainActivity.this).isRecordingEnabled());
+
+        // извлекаем сохраненную настройку и устанавливаем значение в тагл
+        Boolean isRecordingEnabled =  AppPreferences.getInstance(MainActivity.this).isRecordingEnabled();
+        mSwitchShowSecure.setChecked(isRecordingEnabled);
+
+
         return true;
     }
 
