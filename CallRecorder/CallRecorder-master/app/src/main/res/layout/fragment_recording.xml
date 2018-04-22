@@ -25,7 +25,9 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
             android:text="Large Text"
+            android:fontFamily="Roboto"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <LinearLayout
@@ -38,12 +40,16 @@
                 android:id="@+id/imageView2"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
+
+                android:paddingTop="6dp"
                 android:src="@drawable/phone_out_icon" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
+
+                android:paddingTop="6dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="0dp"
                 android:src="@drawable/time_icon" />
@@ -54,6 +60,7 @@
                 android:layout_height="match_parent"
                 android:paddingLeft="5dp"
 
+                android:fontFamily="Roboto"
                 android:paddingTop="6dp"
                 android:text="Small Text"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -62,6 +69,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
+                android:paddingTop="6dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="0dp"
                 android:src="@drawable/calendar_icon" />
@@ -72,6 +80,7 @@
                 android:layout_height="match_parent"
                 android:paddingLeft="5dp"
 
+                android:fontFamily="Roboto"
                 android:paddingTop="6dp"
                 android:text="Small Text"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
