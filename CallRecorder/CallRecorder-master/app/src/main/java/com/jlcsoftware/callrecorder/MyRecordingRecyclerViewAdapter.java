@@ -267,7 +267,7 @@ public class MyRecordingRecyclerViewAdapter extends RecyclerView.Adapter<MyRecor
             super(view);
             mView = view;
             mCheckBox = (CheckBox) view.findViewById(R.id.checkBox);
-            mContactPic = (ImageView) view.findViewById(R.id.imageView);
+            mContactPic = (ImageView) view.findViewById(R.id.circularImageView);
             mInOutImage = (ImageView) view.findViewById(R.id.imageView2);
             mContactName = (TextView) view.findViewById(R.id.textView);
             mTimeView = (TextView) view.findViewById(R.id.textView3);

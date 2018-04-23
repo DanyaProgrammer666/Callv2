@@ -117,7 +117,7 @@ public class MyContactsAdapter extends BaseAdapter implements Handler.Callback {
             if (null == convertView) {
                 convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contact, parent, false);
             }
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
+            ImageView imageView = (ImageView) convertView.findViewById(R.id.circularImageView);
             imageView.setImageDrawable(record.image);
             TextView textView = (TextView) convertView.findViewById(R.id.textView);
             textView.setText(record.name);

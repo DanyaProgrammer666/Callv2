@@ -6,11 +6,14 @@ import android.app.Service;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioFormat;
+import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.NotificationCompat;
+import android.util.Log;
 
 import com.jlcsoftware.callrecorder.AppPreferences;
 import com.jlcsoftware.callrecorder.LocalBroadcastActions;
@@ -20,6 +23,8 @@ import com.jlcsoftware.database.CallLog;
 
 import java.io.File;
 import java.util.Calendar;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * The nitty gritty Service that handles actually recording the conversations
@@ -89,6 +94,8 @@ public class RecordCallService extends Service {
             this.phoneCall = phoneCall;
             File file = null;
             try {
+                // начинаем запись с помощью mediaRecorder
+                //
                 this.phoneCall.setSartTime(Calendar.getInstance());
                 File dir = AppPreferences.getInstance(getApplicationContext()).getFilesDirectory();
                 mediaRecorder = new MediaRecorder();
@@ -105,6 +112,7 @@ public class RecordCallService extends Service {
                 mediaRecorder.setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION);
 
 
+
                 mediaRecorder.setAudioSamplingRate(8000);
                 mediaRecorder.setAudioEncodingBitRate(12200);
                 mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
@@ -112,6 +120,22 @@ public class RecordCallService extends Service {
                 mediaRecorder.setOutputFile(phoneCall.getPathToRecording());
                 mediaRecorder.prepare();
                 mediaRecorder.start();
+
+                // А ЗДЕСЬ создаем аудио рекордер
+                int myBufferSize = 8192;
+
+                int sampleRate = 8000;
+                int channelConfig = AudioFormat.CHANNEL_IN_MONO;
+                int audioFormat = AudioFormat.ENCODING_PCM_16BIT;
+
+                int minInternalBufferSize = AudioRecord.getMinBufferSize(sampleRate,
+                        channelConfig, audioFormat);
+                int internalBufferSize = minInternalBufferSize * 4;
+                Log.d(TAG, "minInternalBufferSize = " + minInternalBufferSize
+                        + ", internalBufferSize = " + internalBufferSize
+                        + ", myBufferSize = " + myBufferSize);
+                AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.VOICE_COMMUNICATION, sampleRate, channelConfig, audioFormat, internalBufferSize);
+
             } catch (Exception e) {
                 e.printStackTrace();
                 isRecording = false;

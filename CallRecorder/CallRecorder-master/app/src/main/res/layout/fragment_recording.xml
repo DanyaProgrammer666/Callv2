@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="75dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/border"
     android:gravity="center_vertical"
     android:orientation="horizontal">
@@ -14,6 +15,19 @@
         android:layout_marginRight="5dp"
         android:src="@drawable/person_icon" />
 
+    <com.jlcsoftware.callrecorder.CircularImageView
+        android:id="@+id/circularImageView"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/person_icon"
+        app:civ_border="true"
+        app:civ_border_color="#3f51b5"
+        app:civ_border_width="1dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#3f51b5"
+        app:civ_shadow_radius="10" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -25,9 +39,9 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
             android:paddingBottom="2dp"
             android:text="Large Text"
-            android:fontFamily="Roboto"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <LinearLayout
@@ -49,18 +63,18 @@
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
 
-                android:paddingTop="6dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="0dp"
+                android:paddingTop="6dp"
                 android:src="@drawable/time_icon" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="5dp"
-
                 android:fontFamily="Roboto"
+
+                android:paddingLeft="5dp"
                 android:paddingTop="6dp"
                 android:text="Small Text"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -69,18 +83,18 @@
                 android:id="@+id/imageView4"
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
-                android:paddingTop="6dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="0dp"
+                android:paddingTop="6dp"
                 android:src="@drawable/calendar_icon" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="5dp"
-
                 android:fontFamily="Roboto"
+
+                android:paddingLeft="5dp"
                 android:paddingTop="6dp"
                 android:text="Small Text"
                 android:textAppearance="?android:attr/textAppearanceSmall" />

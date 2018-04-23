@@ -195,7 +195,7 @@ public class MyWhitelistItemRecyclerViewAdapter extends RecyclerView.Adapter<MyW
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mImageView = (ImageView) view.findViewById(R.id.imageView);
+            mImageView = (ImageView) view.findViewById(R.id.circularImageView);
             mNameView = (TextView) view.findViewById(R.id.textView);
 
         }
